@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tp/loginpage.dart';
+import 'package:tp/pages/VocalAssistantApp.dart';
+import 'package:tp/pages/loginpage.dart';
+import 'package:tp/pages/mainpage.dart';
 
-import 'MyHomePage.dart';
+import 'pages/RegisterPage.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,8 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/':(context)=>MyLoginPage(title: "Login Page"),
-        '/registerPage':(context)=>MyHomePage(title: "Register Page"),
+        '/':(context)=>LoginPage(title: "Login Page"),
+        '/registerPage':(context)=>RegisterPage(title: "Register Page"),
+        '/main':(context)=>HomePage(),
+        '/VOA':(context)=>VocalAssistantApp()
       },
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

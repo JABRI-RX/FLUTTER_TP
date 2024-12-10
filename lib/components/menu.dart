@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:tp/components/toast.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Drawer(
+    return Drawer(
       child: Column(
         children: [
-          DrawerHeader(
+          const DrawerHeader(
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.bottomRight,
@@ -27,7 +28,7 @@ class MenuDrawer extends StatelessWidget {
               ],
             )
           ),
-          ExpansionTile(
+          const ExpansionTile(
             title: const Text("Image Classification Model"),
             children: [
               ListTile(
@@ -39,14 +40,17 @@ class MenuDrawer extends StatelessWidget {
 
             ],
           ),
-          ListTile(
+          const ListTile(
             title: Text("Stock Price Prediction"),
           ),
           ListTile(
-            title: Text("Vocal Assistant "),
+            title: const Text("Vocal Assistant "),
+            onTap: (){
+              Navigator.pushNamed(context, '/VOA');
+            },
           ),
           ListTile(
-            title: Text("RAG"),
+            title: const Text("RAG"),
           ),
         ],
       ),
